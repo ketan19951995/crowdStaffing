@@ -1,4 +1,3 @@
-console.log("Hello");
 let dbConn = require('./../../config/db.config');
 //User object create
 let User = function (user) {

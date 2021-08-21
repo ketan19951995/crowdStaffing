@@ -16,6 +16,9 @@ app.get('/', (req, res) => {
 const userRoutes = require('./src/routes/user.route')
 // using as middleware
 app.use('/users', userRoutes)
+
+const subscriptionRoutes = require('./src/routes/subscription.route')
+app.use('/' , subscriptionRoutes);
 // listen for requests
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
