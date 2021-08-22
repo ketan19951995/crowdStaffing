@@ -7,7 +7,7 @@ exports.create = function (req, res) {
         if (err) {
             res.send(err);
         } else {
-            res.json(newUser);
+            res.json({"user_name" : newUser.userName , "created_at" : newUser.createdAt});
         }
     });
 };
@@ -17,7 +17,7 @@ exports.findByUserName = function (req, res) {
         if (err) {
             res.send(err);
         } else {
-            res.json(user);
+            res.json({"user_name" : user.username , "created_at" : user.createdAt});
         }
     });
 };

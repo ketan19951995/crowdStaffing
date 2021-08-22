@@ -26,9 +26,14 @@ Subscription.findAllPlansByUserName = function (userName, result) {
         }
         else {
             for(let i=0;i<res.length;i++){
-                let getValidTillResult = await getValidTill(res[i].planId , res[i].startDate);    
-                console.log("getValid Till" , getValidTillResult);
-                res[i]["valid_till"] = getValidTillResult;
+                let startDate = res[i].startDate;
+                let getValidTillResult = await getValidTill(res[i].planId , startDate);    
+                getValidTillResult = JSON.stringify(getValidTillResult)
+                startDate = JSON.stringify(startDate);
+                res[i]["start_date"] = startDate.substring(1, startDate.indexOf('T'));
+                res[i]["valid_till"] =  getValidTillResult.substring(1, getValidTillResult.indexOf('T'));
+                delete res[i]["startDate"];
+                delete res[i]["userName"]; 
             }
             result(null, res);
         }
