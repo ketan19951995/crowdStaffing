@@ -18,7 +18,6 @@ async function getAmount(planId) {
 async function getDaysLeft(planId, startDate) {
     
     let currentDate = new Date();
-    console.log("sdfljfsldjf" , startDate , currentDate);
     let result = await getPlanDetailsFromPlanId(planId);
     console.log("result ", result);
     let validity = result.validity;
@@ -35,7 +34,6 @@ async function getDaysLeft(planId, startDate) {
 
 // This will get the days left of the plan
 async function getValidTill(planId, startDate) {
-    console.log("sdfljfsldjf" , startDate);
     let result = await getPlanDetailsFromPlanId(planId);
     console.log("result ", result);
     let validity = result.validity;

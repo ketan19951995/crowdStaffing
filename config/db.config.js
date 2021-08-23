@@ -1,4 +1,3 @@
-console.log("Helloq");
 const mysql = require('mysql');
 //local mysql db connection
 const dbConn = mysql.createConnection({
